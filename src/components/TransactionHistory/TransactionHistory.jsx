@@ -23,30 +23,17 @@ export const TransactionHistory = ({ items }) => {
       </Thead>
 
       <Tb>
-        {items.map((item, idx) => {
+        {items.map(item => {
           return (
-            <TableRow
-              key={item.id}
-              id={item.id}
-              type={item.type}
-              currency={item.currency}
-              amount={item.amount}
-              index={idx}
-            />
+            <ExtendedTr key={item.id}>
+              <Type>{item.type}</Type>
+              <Td>{item.amount}</Td>
+              <Td>{item.currency}</Td>
+            </ExtendedTr>
           );
         })}
       </Tb>
     </Table>
-  );
-};
-
-const TableRow = ({ type, amount, currency, index }) => {
-  return (
-    <ExtendedTr idx={index}>
-      <Type>{type}</Type>
-      <Td>{amount}</Td>
-      <Td>{currency}</Td>
-    </ExtendedTr>
   );
 };
 
@@ -59,11 +46,4 @@ TransactionHistory.propTypes = {
       currency: PropTypes.string.isRequired,
     }).isRequired
   ).isRequired,
-};
-
-TableRow.propTypes = {
-  index: PropTypes.number.isRequired,
-  type: PropTypes.string.isRequired,
-  amount: PropTypes.string.isRequired,
-  currency: PropTypes.string.isRequired,
 };
