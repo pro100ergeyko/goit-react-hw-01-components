@@ -7,15 +7,10 @@ export const ProfileCard = styled.div`
   justify-content: center;
   gap: 10px;
 
-  margin: 0 auto;
-  margin-bottom: 5px;
-  padding: 4px;
-
   max-width: 100%;
   width: 360px;
 
-  border-radius: 10%;
-  box-shadow: -3px -3px 3px #e6dc13, 3px 3px 3px #385fe6;
+  box-shadow: -5px -5px 5px #e6dc13, 5px 5px 5px #385fe6;
   background-color: #e6e2f1a1;
 `;
 
